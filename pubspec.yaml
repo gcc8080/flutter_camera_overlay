@@ -1,10 +1,11 @@
 name: flutter_camera_overlay
 description: A Flutter plugin to add common camera overlay components such as ID Card, Credit Card, Texts, prompts or custom components.
-version: 0.1.1
-homepage: https://github.com/matwright/flutter_camera_overlay
-repository: https://github.com/matwright/flutter_camera_overlay
+version: 0.2.0-camera2.1
+homepage: https://github.com/gcc8080/flutter_camera_overlay
+repository: https://github.com/gcc8080/flutter_camera_overlay
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -16,8 +17,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  camera: ^0.9.4
-  camera_web: ^0.2.1+1
+  camera: 0.11.2
+  # Flutter 3.27 requires the host application to declare this same package
+  # directly in order to select Camera2 over camera_android_camerax. See README.
+  camera_android:
+    git:
+      url: https://github.com/gcc8080/camera_android.git
+      ref: e61427e9ad09754aee6767bf996a4d436cb3ab31
 
 dev_dependencies:
   flutter_test:
@@ -28,7 +34,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

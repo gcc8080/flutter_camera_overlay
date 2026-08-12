@@ -4,6 +4,7 @@
 /build/
 /android/
 /.packages
+/pubspec.lock
 /lib/main.dart
 /web/
 /flutter_camera_overlay.iml
